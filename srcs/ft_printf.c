@@ -6,12 +6,11 @@
 /*   By: olydden <olydden@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/01 11:49:25 by olydden           #+#    #+#             */
-/*   Updated: 2020/08/10 12:28:08 by olydden          ###   ########.fr       */
+/*   Updated: 2020/08/10 21:39:45 by olydden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
-#include <stdio.h>
 
 int		specifiers_s_p(const char *format, va_list ap, int *i,
 						t_flags *p_t_flags)
@@ -26,7 +25,7 @@ int		specifiers_s_p(const char *format, va_list ap, int *i,
 	}
 	if (format[*i] == 'p')
 	{
-		if ((printed = p_specifier(ap, p_t_flags)) < 0)
+		if ((printed = p_specifier(ap, p_t_flags, format, i)) < 0)
 			return (-1);
 	}
 	return (printed);
@@ -55,7 +54,7 @@ int		specifiers(const char *format, va_list ap, int *i, t_flags *p_t_flags)
 		printed += j;
 	}
 	if (format[*i] == '%')
-		printed += ft_putchar('%');
+		printed += percent_specifier(p_t_flags);
 	ft_free(p_t_flags);
 	return (printed);
 }

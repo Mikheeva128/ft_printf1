@@ -6,7 +6,7 @@
 /*   By: olydden <olydden@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/09 15:55:34 by olydden           #+#    #+#             */
-/*   Updated: 2020/08/10 09:09:43 by olydden          ###   ########.fr       */
+/*   Updated: 2020/08/10 20:26:52 by olydden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,15 @@ int	s3_specifier(t_flags *p_t_flags, char **pointer)
 
 	counter = 0;
 	printed = 0;
-	spaces = 0;
+	spaces = p_t_flags->width - ft_strlen(*pointer);
 	if (p_t_flags->width)
 	{
-		while (counter < (spaces = p_t_flags->width -
-				ft_strlen(*pointer)))
+		while (counter++ < spaces)
 		{
-			printed += ft_putchar(' ');
-			counter++;
+			if (p_t_flags->null)
+				printed += ft_putchar('0');
+			else
+				printed += ft_putchar(' ');
 		}
 	}
 	printed += ft_putstr(*pointer);
@@ -84,7 +85,7 @@ int	s1_specifier(char **pointer, t_flags *p_t_flags)
 	if (p_t_flags->minus)
 	{
 		printed += ft_putstr(*pointer);
-		if (p_t_flags->width && !p_t_flags->null)
+		if (p_t_flags->width)
 		{
 			while (counter++ < (spaces = p_t_flags->width -
 					ft_strlen(*pointer)))
@@ -107,8 +108,7 @@ int	s_specifier(const char *format, int *i, t_flags *p_t_flags, va_list ap)
 	j = 0;
 	if (s4_specifier(format, i, &pointer, ap) < 0)
 		return (-1);
-	if ((!pointer && p_t_flags->precision >= 6) ||
-		(pointer == 0 && p_t_flags->precision < 0))
+	if (!pointer || (pointer == 0 && p_t_flags->precision < 0))
 		pointer = "(null)";
 	if ((j = s1_specifier(&pointer, p_t_flags)) < 0)
 		return (-1);

@@ -6,13 +6,13 @@
 /*   By: olydden <olydden@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/09 21:36:32 by olydden           #+#    #+#             */
-/*   Updated: 2020/08/10 14:22:09 by olydden          ###   ########.fr       */
+/*   Updated: 2020/08/10 21:40:45 by olydden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int	x8_specifier(t_flags *p_t_flags, char **pointer)
+int		x8_specifier(t_flags *p_t_flags, char **pointer)
 {
 	int	printed;
 	int	spaces;
@@ -40,7 +40,7 @@ int	x8_specifier(t_flags *p_t_flags, char **pointer)
 	return (printed);
 }
 
-int	x7_specifier(t_flags *p_t_flags, char **pointer)
+int		x7_specifier(t_flags *p_t_flags, char **pointer)
 {
 	int	printed;
 	int	spaces;
@@ -66,7 +66,7 @@ int	x7_specifier(t_flags *p_t_flags, char **pointer)
 	return (printed);
 }
 
-int	x6_specifier(t_flags *p_t_flags, char **pointer)
+int		x6_specifier(t_flags *p_t_flags, char **pointer)
 {
 	if (p_t_flags->precision == 0 && **pointer == '0')
 	{
@@ -76,7 +76,7 @@ int	x6_specifier(t_flags *p_t_flags, char **pointer)
 	return (1);
 }
 
-int	x5_specifier(t_flags *p_t_flags, char **pointer)
+int		x5_specifier(t_flags *p_t_flags, char **pointer)
 {
 	int	printed;
 	int	spaces;

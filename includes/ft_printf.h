@@ -6,7 +6,7 @@
 /*   By: olydden <olydden@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/01 11:50:23 by olydden           #+#    #+#             */
-/*   Updated: 2020/08/10 14:05:33 by olydden          ###   ########.fr       */
+/*   Updated: 2020/08/10 21:32:37 by olydden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,11 @@ int				d14_specifier(t_flags *p_t_flags, int d);
 int				d15_specifier(t_flags *p_t_flags, int null, int d);
 int				d16_specifier(t_flags *p_t_flags, const char *format, int *i,
 							int d);
-int				p_specifier(va_list ap, t_flags *p_t_flags);
+int				p_specifier(va_list ap, t_flags *p_t_flags, const char *format,
+							int *i);
 int				p1_specifier(t_flags *p_t_flags, char **pointer,
 							unsigned long long p, int spaces);
+void			p3_specifier(const char *format, int *i, char **pointer);
 int				u_specifier(t_flags *p_t_flags, va_list ap, const char *format,
 							int *i);
 int				u1_specifier(t_flags *p_t_flags, unsigned int u);
@@ -80,5 +82,6 @@ int				x5_specifier(t_flags *p_t_flags, char **pointer);
 int				x6_specifier(t_flags *p_t_flags, char **pointer);
 int				x7_specifier(t_flags *p_t_flags, char **pointer);
 int				x8_specifier(t_flags *p_t_flags, char **pointer);
+int				percent_specifier(t_flags *p_t_flags);
 
 #endif

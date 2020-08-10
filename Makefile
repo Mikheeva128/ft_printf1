@@ -6,7 +6,7 @@
 #    By: olydden <olydden@student.21-school.ru>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/11 19:50:06 by olydden           #+#    #+#              #
-#    Updated: 2020/08/10 09:10:12 by olydden          ###   ########.fr        #
+#    Updated: 2020/08/10 21:45:01 by olydden          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,11 +29,12 @@ SOURCES = 	ft_printf.c\
 			d_d4_specifier.c\
 			d5_d9_specifier.c\
 			d10_d14_specifier.c\
-			d15_d16_p_specifiers.c\
+			d15_d16_specifiers.c\
 			u_u4_specifier.c\
-			u5_u7_c_specifiers.c\
+			u5_u7_c_percent_specifiers.c\
 			x_x4_specifier.c\
-			x5_x8_specifier.c
+			x5_x8_specifier.c\
+			p_specifier.c
 
 SRCS = $(addprefix $(DIR_S)/,$(SOURCES))
 
