@@ -6,7 +6,7 @@
 /*   By: olydden <olydden@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/10 14:21:49 by olydden           #+#    #+#             */
-/*   Updated: 2020/08/10 17:56:36 by olydden          ###   ########.fr       */
+/*   Updated: 2020/08/10 18:29:56 by olydden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int	u6_specifier(t_flags *p_t_flags, unsigned int u)
 	spaces = 0;
 	counter = 0;
 	null = p_t_flags->precision - ft_nbrlen_u(u);
-	if ((p_t_flags->width && null > 0) ||cd
+	if ((p_t_flags->width && null > 0) ||
 		(p_t_flags->precision == 0 && null > 0) || u == 0)
 		spaces = p_t_flags->width - p_t_flags->precision;
 	else
